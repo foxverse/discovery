@@ -1,0 +1,15 @@
+<?php
+
+$discoveryConfig = [
+	'Endpoint-index' => [
+		'api' => '<PROD API DOMAIN>',
+		'portal' => '<PROD PORTAL DOMAIN>',
+		'n3ds' => '<PROD CTR DOMAIN>'
+	],
+	'Endpoint-dev' => [
+		'api' => '<DEV API DOMAIN>',
+		'portal' => '<DEV PORTAL DOMAIN>',
+		'n3ds' => '<DEV CTR DOMAIN>'
+	],
+	'maintenanceMode' => false
+];
