@@ -1,6 +1,5 @@
 <?php
-require_once(__DIR__ . DIRECTORY_SEPARATOR . '../AltoRouter.php');
-require_once(__DIR__ . DIRECTORY_SEPARATOR . '../discovery.php');
+require_once('../../discovery.php');
 
 $dom = new DOMDocument();
 $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><result/>');
