@@ -1,6 +1,6 @@
 <?php
-require_once('../AltoRouter.php');
-require_once('../discovery.php');
+require_once(__DIR__ . DIRECTORY_SEPARATOR . '../AltoRouter.php');
+require_once(__DIR__ . DIRECTORY_SEPARATOR . '../discovery.php');
 
 if ($discoveryConfig['maintenanceMode']) {
 	$dom = new DOMDocument();
