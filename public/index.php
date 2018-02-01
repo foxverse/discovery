@@ -16,17 +16,21 @@ if ($discoveryConfig['maintenanceMode']) {
 	$xml->addChild('message', 'SERVICE_MAINTENANCE');
 
 	$dom->loadXML($xml->asXML());
+	$xml = $dom->saveXML();
 
 	header('Content-Type: application/xml');
+	header('Content-Length: ' . strlen($xml));
 	http_response_code(400);
-	print($dom->saveXML());
+
+	echo $xml;
 	exit;
 }
 
 $router = new AltoRouter();
 
 $router->addRoutes(array(
-	array('GET', '/v1/endpoint[*:type]', 'v1/endpointHandler.php', 'Endpoint-handler'),
+	array('GET', '/v1/endpoint', 'v1/endpointHandler.php', 'Endpoint-index'),
+	array('GET', '/v1/endpoint[*:type]', 'v1/endpointHandler.php', 'Endpoint-handler')
 ));
 
 $match = $router->match(urldecode($_SERVER['REQUEST_URI']));
